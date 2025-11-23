@@ -1,0 +1,50 @@
+import string
+
+# 1. Get text from the user
+# text = input("Enter your text: ")
+
+# Example paragraph for testing
+text = """
+Natural language processing allows computers to understand and analyze human language.
+This project demonstrates a simple word frequency analyzer, showing which words appear most often in a given text.
+It removes punctuation, converts text to lowercase, and filters out common stop words.
+"""
+
+# 2. Remove punctuation marks
+for p in string.punctuation:
+    text = text.replace(p, "")
+
+
+# 3. Convert to lowercase
+text = text.lower()
+
+
+# 4. Split into words
+words = text.split()
+
+
+# 5. Remove stop words
+stop_words = ["and", "a", "the", "with", "to", "of", "in", "on", "for", "is", "are"]
+filtered_words = []
+
+for w in words:
+    if w not in stop_words:
+        filtered_words.append(w)
+
+# 6. Count word occurrences
+counts = {}
+
+for w in filtered_words:
+    if w in counts:
+        counts[w] += 1
+    else:
+        counts[w] = 1
+
+
+# 7. Find the three most frequent words
+# (Sort by count, descending)
+sorted_words = sorted(counts.items(), key=lambda x: x[1], reverse=True)
+
+print("\nTop three most frequent words:")
+for word, count in sorted_words[:3]:
+    print(f"{word}: {count} times")

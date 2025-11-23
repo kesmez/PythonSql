@@ -1,4 +1,4 @@
-# Step 1: Empty cart
+# Step 1: Empty cart.
 cart = []
 
 while True:

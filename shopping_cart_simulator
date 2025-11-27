@@ -1,0 +1,60 @@
+# Shopping Cart Simulator - Loop Practice
+
+prices = [5, 12, 7, 20, 3, 15]
+
+print("Original prices:", prices)
+
+# 1. Print each price
+print("\n1) Printing each price:")
+for p in prices:
+    print(p)
+
+
+# 2. Calculate the total cost
+print("\n2) Total price calculation:")
+total = 0
+for p in prices:
+    total += p
+print("Total cost:", total)
+
+
+# 3. Count how many items cost more than 10
+print("\n3) Counting items > 10:")
+count_over_10 = 0
+for p in prices:
+    if p > 10:
+        count_over_10 += 1
+print("Items over 10:", count_over_10)
+
+
+# 4. Find the cheapest and most expensive item
+print("\n4) Cheapest and most expensive:")
+
+
+cheapest = prices[0]
+
+print("Finding the cheapest:")
+for p in prices:
+    print("Checking:", p, "| Current cheapest:", cheapest)
+    if p < cheapest:
+        cheapest = p
+print("Result:", cheapest)
+
+
+# 5. Print each item with its index
+print("\n5) Prices with indexes:")
+index = 0
+for p in prices:
+    print("Index", index, "→", p)
+    index += 1
+
+
+# 6. Create a discounted price list (20% off)
+print("\n6) Creating discounted list:")
+discounted = []
+
+for p in prices:
+    new_price = p * 0.8
+    discounted.append(new_price)
+
+print("Discounted prices:", discounted)
